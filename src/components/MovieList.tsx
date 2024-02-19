@@ -4,6 +4,7 @@ import MovieRows from "./MovieRows";
 
 const MovieList = () => {
   const [data, setData] = useState<any[]>([]);
+  const [page, setPage] = useState(1);
 
   const options = {
     method: "GET",
@@ -15,7 +16,7 @@ const MovieList = () => {
   };
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc",
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`,
       options
     )
       .then((response) => response.json())
@@ -25,11 +26,40 @@ const MovieList = () => {
         setData(response);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [page]);
 
   return (
-    <div className="container text-center">
-      {data && data.map((movieRow) => <MovieRows movies={movieRow} />)}
+    <div>
+      <div className="container text-center">
+        {data && data.map((movieRow) => <MovieRows movies={movieRow} />)}
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul className="pagination justify-content-center">
+          <li className="page-item">
+            <a className="page-link" caria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li className="page-item">
+            <a className="page-link active">{page}</a>
+          </li>
+          <li className="page-item">
+            <a className="page-link" onClick={() => setPage(page + 1)}>
+              {page + 1}
+            </a>
+          </li>
+          <li className="page-item">
+            <a className="page-link" onClick={() => setPage(page + 2)}>
+              {page + 2}
+            </a>
+          </li>
+          <li className="page-item">
+            <a className="page-link" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };

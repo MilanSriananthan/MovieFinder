@@ -8,16 +8,21 @@ const MovieCard = ({ movie }) => {
     window.open(url, "_blank", "noreferrer");
   };
 
-  console.log(movie);
   const imgUrl = "https://image.tmdb.org/t/p/original" + movie.poster_path;
   return (
-    <div className="card text-bg-dark movie-Poster">
+    <div className="card movie-Poster">
       <img
         src={imgUrl}
         className="card-img"
         alt="..."
         onClick={() => openInNewTab()}
       />
+      <div className="card-body">
+        <p className="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
     </div>
   );
 };

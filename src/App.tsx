@@ -1,5 +1,5 @@
+import { useState } from "react";
 import MovieList from "./components/MovieList";
-import MyComponent from "./components/TestComp";
 
 function App() {
   return (

@@ -2,9 +2,6 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 const MovieRows = ({ movies }) => {
-  console.log("here");
-  console.log(movies);
-
   return (
     <div className="row">
       {movies.map((movie) => (
