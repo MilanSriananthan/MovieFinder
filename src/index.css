@@ -1,0 +1,15 @@
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+img {
+  transition: transform 0.2s;
+  background-color: rgb(173, 173, 237);
+}
+
+.movie-Poster:hover {
+  transform: scale(1.05);
+}
