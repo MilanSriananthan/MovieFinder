@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from "react";
 
-const MovieCard = ({ movie }) => {
-  const [data, setData] = useState([{}]);
+interface Props {
+  movie: {
+    adult: boolean;
+    backdrop_path: string;
+    id: number;
+    original_language: string;
+    poster_path: string;
+    release_date: string;
+    title: string;
+  };
+}
+
+interface serverData {
+  members: string[];
+}
+
+const MovieCard = ({ movie }: Props) => {
+  const [data, setData] = useState<serverData>({ members: ["NO"] });
   const [movieName, setMovieName] = useState("");
   const openInNewTab = () => {
     let url = "https://www.google.com/search?q=";

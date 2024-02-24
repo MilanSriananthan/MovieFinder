@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import MovieRows from "./MovieRows";
 
-const MovieList = ({ year, genre }) => {
+interface Props {
+  year: number;
+  genre: number;
+}
+
+const MovieList = ({ year, genre }: Props) => {
   const [data, setData] = useState<any[]>([]);
   const [page, setPage] = useState(1);
 

@@ -1,7 +1,19 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-const MovieRows = ({ movies }) => {
+interface Props {
+  movies: {
+    adult: boolean;
+    backdrop_path: string;
+    id: number;
+    original_language: string;
+    poster_path: string;
+    release_date: string;
+    title: string;
+  }[];
+}
+
+const MovieRows = ({ movies }: Props) => {
   return (
     <div className="row">
       {movies.map((movie) => (
