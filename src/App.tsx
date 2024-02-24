@@ -1,10 +1,10 @@
-import { useState } from "react";
-import MovieList from "./components/MovieList";
+import { useEffect, useState } from "react";
+import MainView from "./components/MainView";
 
 function App() {
   return (
     <div>
-      <MovieList />
+      <MainView />
     </div>
   );
 }

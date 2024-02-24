@@ -5,7 +5,7 @@ const MovieRows = ({ movies }) => {
   return (
     <div className="row">
       {movies.map((movie) => (
-        <div className="col" style={{ padding: "10px" }}>
+        <div key={movie.title} className="col" style={{ padding: "10px" }}>
           <MovieCard movie={movie} />
         </div>
       ))}
