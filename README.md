@@ -15,3 +15,15 @@ Figure 1: Google User metric
 
 ![Screen Shot 2024-09-17 at 1 18 04 PM](https://github.com/user-attachments/assets/5ea2750b-f9a8-4968-b959-0c58635c1f92)
 Figure 2: Movie Finder Application
+
+
+<h3>Improvements</h3>
+One performace update that was made was to instead of scraping the web again for the google user ratings for a movie that was already looked at, the application now stores all entries in a mongoDB cluster so when an already scaped movie comes into
+view again it pulls the rating from the database instead of web scraping again. This significantly improves the speed at which pages are loaded, especially as the application is used more (since more are in the db). This also enables for a simple generated export list from the DB, which enables other operatons such as sorting.
+
+<h3>Future Improvemen Ideas</h3>
+<ul>
+  <li>Let users have seperate accounts and like movies they watched</li>
+  <li>Create an AI tool that generated movie suggestions based on like history</li>
+  <li>Let user sign-in to other streaming services and grab their movie data (e.g Netflix, hulu, etc)</li>
+</ul>
