@@ -9,3 +9,9 @@ So naturally I looked to find a list of movies that have a high google user rati
 <h3>Solution</h3>
 Movie Finder is a React application with a simple Flask backend. That utilizes TMDB (The movie Database) Api to load in movies with their respective image. Then by using the movie title, a seperate python web-scraper searches the movie and graps the
 google user rating and displays it on the page along with the movie poster. This is done for every movie and there are filter in place to sort the movies by ratings, release date, genre, etc.
+
+![Screen Shot 2024-09-17 at 1 13 49 PM](https://github.com/user-attachments/assets/4aa58d22-b171-4e09-973b-2e88e56ea931)
+Figure 1: Google User metric
+
+![Screen Shot 2024-09-17 at 1 18 04 PM](https://github.com/user-attachments/assets/5ea2750b-f9a8-4968-b959-0c58635c1f92)
+Figure 2: Movie Finder Application
